@@ -1,8 +1,8 @@
 
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-// import Home from "./pages/Home/index";
-// import Portfolio from "./pages/Portfolio/index";
+import Search from "./pages/Search/index";
+import History from "./pages/History/index";
 
 import './App.css';
 
@@ -13,13 +13,13 @@ function App() {
       <div>
         <Switch>
 
-        {/* <Route  exact path={["/", "/search"]}>
+        <Route  exact path={["/", "/search"]}>
             <Search />
-          </Route> */}
+          </Route>
 
-        {/* <Route path={["/history"]}>
+        <Route path={["/history"]}>
             <History />
-          </Route> */}
+          </Route>
 
         </Switch>
       </div>
