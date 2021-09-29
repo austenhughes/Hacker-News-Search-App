@@ -18,7 +18,6 @@ function Searchbar(props) {
         let newHistory = historyStored + " ," + forCall
         localStorage.setItem("history", newHistory);
 
-
         fetch(
             "http://hn.algolia.com/api/v1/search?query="+forCall+"&tags=story"
         )
@@ -36,6 +35,7 @@ function Searchbar(props) {
                 let listItem = element.title;
                 let listText = document.createTextNode(listItem)
                 listing.appendChild(listText);
+                // console.log(document.getElementById("list"))
                 document.getElementById("list").append(listing)
             });
         });
