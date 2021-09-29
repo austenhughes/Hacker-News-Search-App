@@ -1,9 +1,11 @@
 import React, { useState} from "react";
 import { Button } from '@material-ui/core';
+import Display from "../Display/index";
 
 function Searchbar(props) {
 
     const [newSearch, setNewSearch] = useState({})
+    let results = {};
 
     function handleInputChange(event) {
         const { value } = event.target;
@@ -12,9 +14,7 @@ function Searchbar(props) {
 
     function handleFormSubmitNewSearch(event) {
         event.preventDefault();
-        // console.log(newSearch);
         let forCall = newSearch.value;
-        console.log(forCall)
 
         fetch(
             "http://hn.algolia.com/api/v1/search?query="+forCall+"&tags=story"
@@ -23,10 +23,19 @@ function Searchbar(props) {
             return response.json();
         })
         .then(function (data) {
-            let information = data
-            console.log(information)
+            let results = data;
+            let info = results.hits;
+            console.log(info);
+            results = info
+            info.forEach(element => {
+                console.log(element.title)
+                let listing = document.createElement("LI");
+                let listItem = element.title;
+                let listText = document.createTextNode(listItem)
+                listing.appendChild(listText);
+                document.getElementById("list").append(listing)
+            });
         });
-
           };
 
     return (
@@ -46,7 +55,13 @@ function Searchbar(props) {
             onClick={handleFormSubmitNewSearch} 
             className="btn" type="button" value="Search">Search
         </Button>
-       
+
+        <Display results= {results} />
+
+        <ul>
+        <li className="list" id="list"></li>
+        </ul>
+
         </div>
 );
 

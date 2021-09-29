@@ -1,11 +1,13 @@
 import React from "react";
 
-function Display() {
+function Display(props) {
 return (
+<div>
+
 <div className="display">
-    <div>things</div>
-    <div>from</div>
-    <div>the API</div>
+    <div></div>
+    <div></div>
+</div>
 </div>
 );
 }

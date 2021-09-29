@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../../components/Nav/index";
 import Searchbar from "../../components/Searchbar/index";
-import Display from "../../components/Display/index";
+// import Display from "../../components/Display/index";
 import Footer from "../../components/Footer/index";
 
 function Search(props) {
@@ -9,7 +9,7 @@ function Search(props) {
   return <div>
       <Nav />
       <Searchbar />
-      <Display />
+      {/* <Display /> */}
       <Footer />
       </div>
 
