@@ -29,15 +29,22 @@ function Record() {
       
       async function asyncCall() {
         const result = await showHistory();
-        console.log(result);
+        // console.log(result);
         result.forEach(element => {
-            let historyListing = document.createElement("li");
-            let historyListItem = element;
-            let historyListText = document.createTextNode(historyListItem)
-            historyListing.appendChild(historyListText);
-            console.log(historyListing);
-            document.getElementById("historyList")
-            .append(historyListing);
+
+            let historyListing = document.createElement("a");
+            var linkText = document.createTextNode(element);
+                historyListing.appendChild(linkText);
+                historyListing.href = ("/hacker-news-search-app/#/search");
+                historyListing.onclick = function(){
+                // console.log(this.innerHTML)
+                localStorage.setItem("searchAgain", this.innerHTML)
+                  };
+                document.getElementById("historyList").append(historyListing)
+          
+            let historyListingSpace = document.createElement("br");
+            document.getElementById("historyList").append(historyListingSpace)
+
         });
       }
       

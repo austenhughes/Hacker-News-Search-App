@@ -3,7 +3,33 @@ import { Button } from '@material-ui/core';
 
 function Searchbar(props) {
 
+    let forCall = "";
+
     const [newSearch, setNewSearch] = useState({})
+
+    asyncCall();
+
+    function rerunSearch(){
+        return new Promise(resolve => {
+            let rerun = localStorage.getItem("searchAgain")
+            // console.log(rerun)
+            resolve(rerun)
+        })
+    };
+
+    async function asyncCall(){
+        const result = await rerunSearch();
+        // console.log(result)
+        if (result !== ""){
+            // console.log(result)
+            localStorage.setItem("searchAgain", "")
+            forCall = result
+            console.log(forCall)
+            handleFormSubmitNewSearch();
+        }
+    };
+
+    // const [newSearch, setNewSearch] = useState({})
 
     function handleInputChange(event) {
         const { value } = event.target;
@@ -11,7 +37,7 @@ function Searchbar(props) {
         };
 
     function handleFormSubmitNewSearch(event) {
-        event.preventDefault();
+        // event.preventDefault();
 
         clearLast ();
         function clearLast() {
@@ -22,9 +48,19 @@ function Searchbar(props) {
         }
         const container = document.querySelector('#list');
         removeAllChildNodes(container);
+        };
+
+        // could be messy
+        checkIfRerun();
+        function checkIfRerun(){
+            if(forCall !== ""){
+            forCall = forCall;
+            } else {
+            forCall = newSearch.value;  
+            }
         }
 
-        let forCall = newSearch.value;
+
         let historyStored = localStorage.getItem("history");
         let newHistory = historyStored + " ," + forCall
         localStorage.setItem("history", newHistory);
@@ -47,14 +83,10 @@ function Searchbar(props) {
                 listing.setAttribute("id", "history");
 
                 let listingURL = document.createElement("a");
-                var linkText = document.createTextNode("my title text");
+                var linkText = document.createTextNode(listURL);
                 listingURL.appendChild(linkText);
-                listingURL.title = listURL;
                 listingURL.href = listURL;
 
-                // listing.setAttribute("id", "history");
-                // let listItem = element.title;
-                // let listURL = element.url
                 let listText = document.createTextNode(listItem)
                 let listTextURL = document.createTextNode(listURL)
                 listing.appendChild(listText);
