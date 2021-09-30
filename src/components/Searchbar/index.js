@@ -1,6 +1,5 @@
 import React, { useState} from "react";
 import { Button } from '@material-ui/core';
-// import Display from "../Display/index";
 
 function Searchbar(props) {
 
@@ -41,12 +40,27 @@ function Searchbar(props) {
             let info = results.hits;
             results = info
             info.forEach(element => {
+                let listItem = element.title;
+                let listURL = element.url
+
                 let listing = document.createElement("li");
                 listing.setAttribute("id", "history");
-                let listItem = element.title;
+
+                let listingURL = document.createElement("a");
+                var linkText = document.createTextNode("my title text");
+                listingURL.appendChild(linkText);
+                listingURL.title = listURL;
+                listingURL.href = listURL;
+
+                // listing.setAttribute("id", "history");
+                // let listItem = element.title;
+                // let listURL = element.url
                 let listText = document.createTextNode(listItem)
+                let listTextURL = document.createTextNode(listURL)
                 listing.appendChild(listText);
+                listingURL.appendChild(listTextURL);
                 document.getElementById("list").append(listing)
+                document.getElementById("list").append(listingURL)
             });
         });
           };
@@ -68,8 +82,6 @@ function Searchbar(props) {
             onClick={handleFormSubmitNewSearch} 
             className="btn" type="button" value="Search">Search
         </Button>
-
-        {/* <Display results= {results} /> */}
 
         <ul>
         <li className="list" id="list"></li>

@@ -4,7 +4,6 @@ import { Button } from '@material-ui/core';
 function Record() {
 
     function handleFormSubmitClearHistory(){
-        // let historyStored = localStorage.getItem("history");
         let historyCleared = '';
         localStorage.setItem("history", historyCleared)
         clearLast ();
