@@ -1,6 +1,23 @@
 import React from "react";
+import { Button } from '@material-ui/core';
 
 function Record() {
+
+    function handleFormSubmitClearHistory(){
+        // let historyStored = localStorage.getItem("history");
+        let historyCleared = '';
+        localStorage.setItem("history", historyCleared)
+        clearLast ();
+        function clearLast() {
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+        const container = document.querySelector('#historyList');
+        removeAllChildNodes(container);
+        }
+    }
 
     function showHistory() {
         return new Promise(resolve => {
@@ -29,10 +46,18 @@ function Record() {
 
 return (
 
+    <div>
     <div className="record">
         <ul>
         <li className="historyList" id="historyList"></li>
         </ul>
+    </div>
+
+        <Button 
+            onClick={handleFormSubmitClearHistory} 
+            className="btn" type="button" value="clear">clear
+        </Button>
+
     </div>
 
 );
