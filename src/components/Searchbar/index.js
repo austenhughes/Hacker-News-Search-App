@@ -13,6 +13,18 @@ function Searchbar(props) {
 
     function handleFormSubmitNewSearch(event) {
         event.preventDefault();
+
+        clearLast ();
+        function clearLast() {
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+        const container = document.querySelector('#list');
+        removeAllChildNodes(container);
+        }
+
         let forCall = newSearch.value;
         let historyStored = localStorage.getItem("history");
         let newHistory = historyStored + " ," + forCall
@@ -27,15 +39,13 @@ function Searchbar(props) {
         .then(function (data) {
             let results = data;
             let info = results.hits;
-            // console.log(info);
             results = info
             info.forEach(element => {
-                // console.log(element.title)
-                let listing = document.createElement("LI");
+                let listing = document.createElement("li");
+                listing.setAttribute("id", "history");
                 let listItem = element.title;
                 let listText = document.createTextNode(listItem)
                 listing.appendChild(listText);
-                // console.log(document.getElementById("list"))
                 document.getElementById("list").append(listing)
             });
         });
