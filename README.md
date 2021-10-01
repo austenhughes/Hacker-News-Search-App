@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Hacker News Search App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+here you will find an application built to search and display articles from Hacker Rank News
 
-## Available Scripts
+## Installations : 
 
-In the project directory, you can run:
+    - react 
+    - react-dom
+    - react-router-dom
 
-### `npm start`
+## Directions :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+to run locally :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    - clone from Github Repo
+    - open integrated terminal
+    - npm i 
+    - npm run start 
+    - the application will now run on localhost
 
-### `npm test`
+to run from web : 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - go to : 
+    - you will open to the search page 
+        - here you can use the search bar to search hacker Rank News database 
+        - you can only run one search at time but you can run as many searches as ou would like
+        - use the nav bar at the top to navigate over to the history page 
+    - history page 
+        - past search parameters will be displayed on this page 
+        - you can click on any past search on the list and it will take you back to / re run that search 
+        - you can use the the clear search history button to clear you search history list if it is too long/ no longer serves you 
+        -use the nav bar at the top to navigate back to the search page 
 
-### `npm run build`
+## Pictures : 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+open to :
+![](src/picsForReadMe/blankSearch.png) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+with search: 
+![](src/picsForReadMe/search.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+history page :
+![](src/picsForReadMe/history.png)
 
-### `npm run eject`
+cleared history : 
+![](src/picsForReadMe/clearedHistory.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## GitHub :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+repo :
+deployed GHpages : 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Recourses : 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+w3schools : https://www.w3schools.com/ <br />
+mozilla : https://developer.mozilla.org/en-US/ <br />
+stackoverflow : https://stackoverflow.com/ <br />
+Hacker News API : https://hn.algolia.com/api <br />
+React : https://reactjs.org/ 
 
-## Learn More
+## find me at : 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Email : austen.hughes.91@gmail.com
+<br/>
+GitHub : https://github.com/austenhughes
+<br/>
+LinkedIn : https://www.linkedin.com/in/austen-hughes-97bb0b202/ 
+<br/>
+Portfolio : https://austenhughes.github.io/React-portfolio/#/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

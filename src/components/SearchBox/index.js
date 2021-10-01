@@ -19,7 +19,6 @@ function SearchBox(props) {
         if (result !== ""){
             localStorage.setItem("searchAgain", "")
             forCall = result
-            console.log(forCall)
             handleFormSubmitNewSearch();
         }
     };
@@ -44,14 +43,15 @@ function SearchBox(props) {
         checkIfRerun();
         function checkIfRerun(){
             if(forCall !== ""){
-            // will run if page is being pulled for a rerun of a past search
-            forCall = forCall;
+            // will run search parameter form local storage for a rerun of a past search
+            let runAgain = forCall
+            forCall = runAgain;
             } else {
-            //  will run if page is being generated for a new search 
+            //  will run search parameter for a new search 
             forCall = newSearch.value;  
             }
         }
-            // pulls search history and adds new search storing it in local storage to be picked up on the history page
+            // records search parameter history in local storage to be used later
         let historyStored = localStorage.getItem("history");
         let newHistory = historyStored + " ," + forCall
         localStorage.setItem("history", newHistory);
@@ -77,7 +77,7 @@ function SearchBox(props) {
                 var linkText = document.createTextNode(listURL);
                 listingURL.appendChild(linkText);
                 listingURL.href = listURL;
-            // sets what will be on the above divs and hyperlinks
+            // sets what will written be on the above divs and hyperlinks
                 let listText = document.createTextNode(listItem)
                 let listTextURL = document.createTextNode(listURL)
                 listing.appendChild(listText);
@@ -90,7 +90,6 @@ function SearchBox(props) {
           };
 
            // sets search and display structure
-
     return (
         
         <div className="searchbar">

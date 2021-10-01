@@ -1,1 +1,0 @@
-# Hacker-News-Search-App
