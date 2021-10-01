@@ -4,10 +4,10 @@ here you will find an application built to search and display articles from Hack
 
 ## Installations : 
 
-react 
-react-dom
-react-router-dom
-GitHub Pages
+react <br/> 
+react-dom <br/>
+react-router-dom <br/>
+GitHub Pages <br/>
 
 ## Directions :
 
