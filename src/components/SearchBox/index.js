@@ -57,7 +57,7 @@ function SearchBox(props) {
         localStorage.setItem("history", newHistory);
             // API call to get search results
         fetch(
-            "http://hn.algolia.com/api/v1/search?query="+forCall+"&tags=story"
+            "https://hn.algolia.com/api/v1/search?query="+forCall+"&tags=story"
         )
         .then(function (response) {
             return response.json();

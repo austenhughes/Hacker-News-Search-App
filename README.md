@@ -4,9 +4,10 @@ here you will find an application built to search and display articles from Hack
 
 ## Installations : 
 
-    - react 
-    - react-dom
-    - react-router-dom
+react 
+react-dom
+react-router-dom
+GitHub Pages
 
 ## Directions :
 
@@ -47,16 +48,17 @@ cleared history :
 
 ## GitHub :
 
-repo :
-deployed GHpages : 
+Repo : https://github.com/austenhughes/hacker-news-search-app
+Deployed GHpages : https://austenhughes.github.io/hacker-news-search-app/
 
 ## Recourses : 
 
-w3schools : https://www.w3schools.com/ <br />
-mozilla : https://developer.mozilla.org/en-US/ <br />
-stackoverflow : https://stackoverflow.com/ <br />
+W3schools : https://www.w3schools.com/ <br />
+Mozilla : https://developer.mozilla.org/en-US/ <br />
+Stackoverflow : https://stackoverflow.com/ <br />
 Hacker News API : https://hn.algolia.com/api <br />
-React : https://reactjs.org/ 
+React : https://reactjs.org/ <br />
+GitHub Pages : https://pages.github.com/
 
 ## find me at : 
 
