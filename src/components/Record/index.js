@@ -30,8 +30,8 @@ function Record() {
       async function asyncCall() {
         const result = await showHistory();
         // console.log(result);
-        result.forEach(element => {
-
+        for (let index = 1; index < result.length; index++) {
+            const element = result[index];
             let historyListing = document.createElement("a");
             var linkText = document.createTextNode(element);
                 historyListing.appendChild(linkText);
@@ -45,7 +45,7 @@ function Record() {
             let historyListingSpace = document.createElement("br");
             document.getElementById("historyList").append(historyListingSpace)
 
-        });
+        }
       }
       
       asyncCall();
@@ -55,14 +55,16 @@ return (
     <div>
     <div className="record">
         <ul>
-        <li className="historyList" id="historyList"></li>
+        <div className="historyList" id="historyList"></div>
         </ul>
     </div>
 
+        <div className="btn">
         <Button 
             onClick={handleFormSubmitClearHistory} 
-            className="btn" type="button" value="clear">clear
+            className="btn" type="button" value="clear">Clear History
         </Button>
+        </div>
 
     </div>
 

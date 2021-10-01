@@ -79,7 +79,7 @@ function Searchbar(props) {
                 let listItem = element.title;
                 let listURL = element.url
 
-                let listing = document.createElement("li");
+                let listing = document.createElement("div");
                 listing.setAttribute("id", "history");
 
                 let listingURL = document.createElement("a");
@@ -98,8 +98,11 @@ function Searchbar(props) {
           };
 
     return (
+        
         <div className="searchbar">
         
+        <div className="bar">
+        <div className="shift">
         <input
           onChange={handleInputChange}
           value={props.value}
@@ -110,13 +113,16 @@ function Searchbar(props) {
           id="search"
         />
         
-        <Button 
+        <button 
             onClick={handleFormSubmitNewSearch} 
-            className="btn" type="button" value="Search">Search
-        </Button>
+            className="btn2" type="button" value="Search">Search
+        </button>
+
+        </div>
+        </div>
 
         <ul>
-        <li className="list" id="list"></li>
+        <div className="list" id="list"></div>
         </ul>
 
         </div>
