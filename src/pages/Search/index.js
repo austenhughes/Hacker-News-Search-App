@@ -3,12 +3,13 @@ import Nav from "../../components/Nav/index";
 import SearchBox from "../../components/SearchBox/index";
 
 function Search() {
-    // sets search page
-  return <div>
+  // sets search page
+  return (
+    <div>
       <Nav />
       <SearchBox />
-      </div>
-
+    </div>
+  );
 }
 
 export default Search;

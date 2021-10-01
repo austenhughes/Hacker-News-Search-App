@@ -3,23 +3,21 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/Search/index";
 import History from "./pages/History/index";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-  // sets routing for pages 
+  // sets routing for pages
   return (
     <Router>
       <div>
         <Switch>
-
-        <Route  exact path={["/", "/search"]}>
+          <Route exact path={["/", "/search"]}>
             <Search />
           </Route>
 
-        <Route path={["/history"]}>
+          <Route path={["/history"]}>
             <History />
           </Route>
-
         </Switch>
       </div>
     </Router>
@@ -27,4 +25,3 @@ function App() {
 }
 
 export default App;
-
