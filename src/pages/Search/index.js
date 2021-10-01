@@ -1,16 +1,12 @@
 import React from "react";
 import Nav from "../../components/Nav/index";
-import Searchbar from "../../components/Searchbar/index";
-// import Display from "../../components/Display/index";
-import Footer from "../../components/Footer/index";
+import SearchBox from "../../components/SearchBox/index";
 
-function Search(props) {
-
+function Search() {
+    // sets search page
   return <div>
       <Nav />
-      <Searchbar />
-      {/* <Display /> */}
-      <Footer />
+      <SearchBox />
       </div>
 
 }

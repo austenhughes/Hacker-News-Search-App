@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from '@material-ui/core';
 
 function Nav() {
+        // sets navbar for use on all pages
 return (
 <div className="nav">
     <div className= "btnBlock">

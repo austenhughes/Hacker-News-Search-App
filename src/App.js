@@ -6,7 +6,7 @@ import History from "./pages/History/index";
 import './App.css';
 
 function App() {
-
+  // sets routing for pages 
   return (
     <Router>
       <div>

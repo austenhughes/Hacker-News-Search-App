@@ -1,44 +1,35 @@
 import React, { useState} from "react";
-import { Button } from '@material-ui/core';
 
-function Searchbar(props) {
-
+function SearchBox(props) {
     let forCall = "";
-
     const [newSearch, setNewSearch] = useState({})
-
+        // checks if this is a search being run again or if it is fresh search
     asyncCall();
-
     function rerunSearch(){
         return new Promise(resolve => {
+        // checks local storage for search again element
             let rerun = localStorage.getItem("searchAgain")
-            // console.log(rerun)
             resolve(rerun)
         })
     };
-
     async function asyncCall(){
+        // if local storage is holding a search to be searched again the program will run that search
+        // if not the page will stay clear 
         const result = await rerunSearch();
-        // console.log(result)
         if (result !== ""){
-            // console.log(result)
             localStorage.setItem("searchAgain", "")
             forCall = result
             console.log(forCall)
             handleFormSubmitNewSearch();
         }
     };
-
-    // const [newSearch, setNewSearch] = useState({})
-
     function handleInputChange(event) {
         const { value } = event.target;
         setNewSearch({...newSearch, value})
         };
-
+        // generates search results and writes to page 
     function handleFormSubmitNewSearch(event) {
-        // event.preventDefault();
-
+        // clears results from last search   
         clearLast ();
         function clearLast() {
         function removeAllChildNodes(parent) {
@@ -49,22 +40,22 @@ function Searchbar(props) {
         const container = document.querySelector('#list');
         removeAllChildNodes(container);
         };
-
-        // could be messy
+        // set search value for search
         checkIfRerun();
         function checkIfRerun(){
             if(forCall !== ""){
+            // will run if page is being pulled for a rerun of a past search
             forCall = forCall;
             } else {
+            //  will run if page is being generated for a new search 
             forCall = newSearch.value;  
             }
         }
-
-
+            // pulls search history and adds new search storing it in local storage to be picked up on the history page
         let historyStored = localStorage.getItem("history");
         let newHistory = historyStored + " ," + forCall
         localStorage.setItem("history", newHistory);
-
+            // API call to get search results
         fetch(
             "http://hn.algolia.com/api/v1/search?query="+forCall+"&tags=story"
         )
@@ -78,24 +69,27 @@ function Searchbar(props) {
             info.forEach(element => {
                 let listItem = element.title;
                 let listURL = element.url
-
+            // create divs with names of top 20 relevant articles
                 let listing = document.createElement("div");
                 listing.setAttribute("id", "history");
-
+            //  creates hyperlinks of top 20 relevant articles
                 let listingURL = document.createElement("a");
                 var linkText = document.createTextNode(listURL);
                 listingURL.appendChild(linkText);
                 listingURL.href = listURL;
-
+            // sets what will be on the above divs and hyperlinks
                 let listText = document.createTextNode(listItem)
                 let listTextURL = document.createTextNode(listURL)
                 listing.appendChild(listText);
                 listingURL.appendChild(listTextURL);
+            // write divs and hyperlinks to page
                 document.getElementById("list").append(listing)
                 document.getElementById("list").append(listingURL)
             });
         });
           };
+
+           // sets search and display structure
 
     return (
         
@@ -130,4 +124,4 @@ function Searchbar(props) {
 
 }
 
-export default Searchbar; 
+export default SearchBox; 
