@@ -21,7 +21,7 @@ to run locally :
 
 to run from web : 
 
-    - go to : 
+    - go to : https://austenhughes.github.io/hacker-news-search-app/#/search 
     - you will open to the search page 
         - here you can use the search bar to search hacker Rank News database 
         - you can only run one search at time but you can run as many searches as ou would like
