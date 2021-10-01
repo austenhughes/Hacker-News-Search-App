@@ -60,7 +60,7 @@ Hacker News API : https://hn.algolia.com/api <br />
 React : https://reactjs.org/ <br />
 GitHub Pages : https://pages.github.com/
 
-## find me at : 
+## Find me at : 
 
 Email : austen.hughes.91@gmail.com
 <br/>
